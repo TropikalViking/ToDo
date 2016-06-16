@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do App</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="toDo.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<body ng-app="app">
+<div class="page__container">
+    <div class="toDo" ng-controller="ctrl">
+        <!-- To Do app code goes here -->
+        <div class="toDo__header" align="center">
+            <h1>To-Do App</h1>
+        </div>
+        <div class= "toDo__item"ng-repeat="item in vm.list track by $index">
+            <input class= "toDo__checkbox" type="checkbox" ng-model="item.done" ng-change="vm.save()" name="checkbox">
+            <input class="toDo__input toDo__input--list" ng-change="vm.save()" type="text" ng-model="item.listItem"name="existingToDo">
+            <i class="material-icons red900" ng-click="vm.removeToDo($index)">clear</i>
+        </div>
+
+        <input class="toDo__input" ng-model= "vm.text" type="text" name="newToDo" placeholder="What else do you need to get done?">
+        <button class="toDo__button" ng-click="vm.addToDo()">Add it!</button>
+    </div>
+    <md-icon>perm_phone_message</md-icon>
+</div>
+</body>
+</html>
