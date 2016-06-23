@@ -22,11 +22,13 @@
             <input class="toDo__input toDo__input--list" ng-change="vm.save()" type="text" ng-model="item.listItem"name="existingToDo">
             <i class="material-icons red900" ng-click="vm.removeToDo($index)">clear</i>
         </div>
-
+        <div>
+        <form ng-submit="vm.addToDo()">
         <input class="toDo__input" ng-model= "vm.text" type="text" name="newToDo" placeholder="What else do you need to get done?">
+        </form>
         <button class="toDo__button" ng-click="vm.addToDo()">Add it!</button>
+        </div>
     </div>
-    <md-icon>perm_phone_message</md-icon>
 </div>
 </body>
 </html>

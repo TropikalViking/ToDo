@@ -61,3 +61,7 @@ input[type=checkbox]:checked + .toDo__input--list {
   margin-left: 0;
   float: right;
   width: calc(100% - 313px); }
+
+form {
+  display: inline;
+}
